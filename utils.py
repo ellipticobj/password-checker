@@ -3,9 +3,17 @@ def checklength(password):
         return False
     return True
 
-def checkcharactertypes(password, acceptedsymbols):
-    # TODO: check for at least one of uppercase, lowercase, symbols, numbers
-    return 0
+def checksymbols(password, acceptedsymbols):
+    return any(char in acceptedsymbols for char in password)
+
+def checkupper(password):
+    return any(char.isuppr() for char in password)
+
+def checklower(password):
+    return any(char.islower() for char in password)
+
+def checknumbers(password):
+    return any(char.isdigit() for char in password)
 
 def checkrockyou(passwords):
     # TODO: check the passwords against rockyou.txt
