@@ -16,24 +16,26 @@ while True:
     
     
     print("    checking character types...")
+    #             symbol, upper, lower, num
+    charchecks = [False, False, False, False]
     
     print("        checking symbols...", end='')
-    symbolcheck = checksymbols(password, acceptedsymbols)
-    print("pass" if symbolcheck else "fail")
+    charchecks[0] = checksymbols(password, acceptedsymbols)
+    print("pass" if charchecks[0] else "fail")
     
     print('        checking uppercase...', end='')
-    uppercheck = checkupper(password)
-    print("pass" if uppercheck else "fail")
+    charchecks[1] = checkupper(password)
+    print("pass" if charchecks[1] else "fail")
     
     print('        checking lowercase...', end='')
-    lowercheck = checklower(password)
-    print("pass" if lowercheck else "fail")
+    charchecks[2] = checklower(password)
+    print("pass" if charchecks[2] else "fail")
     
     print("        checking numbers...", end='')
-    numcheck = checknumbers(password)
-    print("pass" if numcheck else "fail")
+    charchecks[3] = checknumbers(password)
+    print("pass" if charchecks[3] else "fail")
     
-    print("    done")
+    print("    fail" if False in charchecks else "    done")
     
     print("  checking against common passwords...", end='')
     rockyoucheck = checkrockyou(password)
@@ -42,5 +44,5 @@ while True:
     else:
         print("pass")
     
-    print(suggestimprovements())
+    print(suggestimprovements(lengthcheck, charchecks, rockyoucheck))
     
