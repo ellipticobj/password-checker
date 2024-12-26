@@ -48,6 +48,8 @@ print("fail" if lengthcheck == False or rockyoucheck == False or False in charch
 suggestions = suggestimprovements(lengthcheck,charchecks,rockyoucheck)
 
 if suggestions:
-    print("\nSuggestions to improve your password:")
+    print("\nsuggestions to improve your password:")
     for line in suggestions:
         print(line)
+else:
+    print("looking good!")
