@@ -49,4 +49,5 @@ suggestions = suggestimprovements(lengthcheck,charchecks,rockyoucheck)
 
 if suggestions:
     print("\nSuggestions to improve your password:")
-    print(line for line in suggestions)
+    for line in suggestions:
+        print(line)

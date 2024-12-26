@@ -27,22 +27,22 @@ def suggestimprovements(lengthcheck, charchecks, rockyoucheck):
     suggestion = []
 
     if not lengthcheck:
-        suggestion += ["make your password at least 8 characters long"]
+        suggestion.append("make your password at least 8 characters long")
         
     if not charchecks[0]:
-        suggestion += ["add at least one symbol to your password"]
+        suggestion.append("add at least one symbol to your password")
         
     if not charchecks[1]:
-        suggestion += ["add at least one uppercase letter to your password"]
+        suggestion.append("add at least one uppercase letter to your password")
         
     if not charchecks[2]:
-        suggestion += ["add at least one lowercase letter to your password"]
+        suggestion.append("add at least one lowercase letter to your password")
         
     if not charchecks[3]:
-        suggestion += ["add at least one number to your password"]
+        suggestion.append("add at least one number to your password")
     
     if not rockyoucheck:
-        suggestion += ["do not use a common or easy to guess password"]
+        suggestion.append("do not use a common or easy to guess password")
         
     return suggestion
 
