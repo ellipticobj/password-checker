@@ -1,5 +1,21 @@
+# vars to tweak
+
+# generator
+genlength = 12
+minsymb = 3
+minupper = 3
+minlower = 3
+minnum = 3
+
+# checker
+securepasslen = 8
+securesymb = 1
+secureupper = 1
+securelower = 1
+securenum = 1
+
 def checklength(password):
-    if len(password) < 8:
+    if len(password) < securepasslen:
         return False
     return True
 
@@ -46,3 +62,7 @@ def suggestimprovements(lengthcheck, charchecks, rockyoucheck):
         
     return suggestion
 
+def generatepass():
+    password = ''
+    
+    return 0
