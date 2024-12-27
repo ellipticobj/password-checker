@@ -64,4 +64,8 @@ while True:
             print("looking good!")
     
     elif choice == "2":
+        print()
         print(f"This is your secure password: {generatepass()}")
+    
+    print()
+    print()
