@@ -1,3 +1,4 @@
+from secretpassword import getpassword
 from utils import *
 
 # TODO: make a password generator
@@ -10,9 +11,8 @@ while True:
         choice = input("1. Check your password strength\n2. Generate a secure password\nInput your choice[1/2]: ")
     
     if choice == "1":
-        password = input("input your password: ")
+        password = getpassword("input your password: ", True)
         print("checking password...")
-
 
         print("    checking password length...", end='')
         lengthcheck = checklength(password)
