@@ -1,4 +1,9 @@
+from random import choice, shuffle
 # vars to tweak
+
+symbols = "!@#$%^&*()-_=+|;:'\",.<>?"
+numbers = "0123456789"
+letters = "abcdefghijklmnopqrstuvwxyz"
 
 # generator
 genlength = 12
@@ -6,6 +11,8 @@ minsymb = 3
 minupper = 3
 minlower = 3
 minnum = 3
+
+
 
 # checker
 securepasslen = 8
@@ -19,8 +26,8 @@ def checklength(password):
         return False
     return True
 
-def checksymbols(password, acceptedsymbols):
-    return sum(char in acceptedsymbols for char in password) >= securesymb
+def checksymbols(password, symbols):
+    return sum(char in symbols for char in password) >= securesymb
 
 def checkupper(password):
     return sum(char.isupper() for char in password) >= secureupper
@@ -64,4 +71,17 @@ def suggestimprovements(lengthcheck, charchecks, rockyoucheck):
 def generatepass():
     password = ''
     
-    return 0
+    for i in range(securesymb):
+        password += choice(symbols)
+    for i in range(secureupper):
+        password += choice(letters).upper()
+    for i in range(securelower):
+        password += choice(letters).lower()
+    for i in range(securenum):
+        password += choice(numbers)
+    
+    if len(password) < securepasslen:
+        for i in range(securepasslen - len(password)):
+            password += choice(symbols+letters.lower()+numbers+letters.upper())
+    
+    return ''.join(shuffle(list(password)))

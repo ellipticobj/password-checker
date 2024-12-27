@@ -4,8 +4,6 @@ from utils import *
 # TODO: make a way for the user to type in the password without it being displaye?
 # TODO: gui?
 
-acceptedsymbols = "!@#$%^&*()-_=+|;:'\",.<>?"
-
 password = input("input your password: ")
 print("checking password...")
 
@@ -23,7 +21,7 @@ print("    checking character types...")
 charchecks = [False, False, False, False]
 
 print("        checking symbols...", end='')
-charchecks[0] = checksymbols(password, acceptedsymbols)
+charchecks[0] = checksymbols(password, symbols)
 print("pass" if charchecks[0] else "fail")
 
 print('        checking uppercase...', end='')
