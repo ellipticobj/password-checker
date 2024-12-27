@@ -49,7 +49,7 @@ while True:
         if not rockyoucheck:
             print("fail")
         else:
-0$gV99c$Er^E
+            print("pass")
 
         print("fail" if lengthcheck == False or rockyoucheck == False or False in charchecks else "pass")
 
