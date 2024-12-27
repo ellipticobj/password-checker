@@ -69,19 +69,24 @@ def suggestimprovements(lengthcheck, charchecks, rockyoucheck):
     return suggestion
 
 def generatepass():
-    password = ''
+    password = []
     
-    for i in range(securesymb):
-        password += choice(symbols)
-    for i in range(secureupper):
-        password += choice(letters).upper()
-    for i in range(securelower):
-        password += choice(letters).lower()
-    for i in range(securenum):
-        password += choice(numbers)
+    for _ in range(securesymb):
+        password.append(choice(symbols))
     
-    if len(password) < securepasslen:
-        for i in range(securepasslen - len(password)):
-            password += choice(symbols+letters.lower()+numbers+letters.upper())
+    for _ in range(secureupper):
+        password.append(choice(letters).upper())
     
-    return ''.join(shuffle(list(password)))
+    for _ in range(securelower):
+        password.append(choice(letters).lower())
+    
+    for _ in range(securenum):
+        password.append(choice(numbers))
+    
+    remaining = securepasslen - len(password)
+    if remaining > 0:
+        allchars = symbols + letters.lower() + letters.upper() + numbers
+        password.extend(choice(allchars) for _ in range(remaining))
+    
+    password = ''.join(shuffle(password))
+    return password
