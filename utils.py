@@ -20,19 +20,18 @@ def checklength(password):
     return True
 
 def checksymbols(password, acceptedsymbols):
-    return any(char in acceptedsymbols for char in password)
+    return sum(char in acceptedsymbols for char in password) >= securesymb
 
 def checkupper(password):
-    return any(char.isupper() for char in password)
+    return sum(char.isupper() for char in password) >= secureupper
 
 def checklower(password):
-    return any(char.islower() for char in password)
+    return sum(char.islower() for char in password) >= securelower
 
 def checknumbers(password):
-    return any(char.isdigit() for char in password)
+    return sum(char.isdigit() for char in password) >= securenum
 
 def checkrockyou(password):
-    # TODO: check the passwords against rockyou.txt
     with open('rockyou.txt', 'r') as file:
         for line in file:
             if password == line.strip():
