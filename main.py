@@ -1,5 +1,9 @@
 from utils import *
 
+# TODO: make a password generator
+# TODO: make a way for the user to type in the password without it being displaye?
+# TODO: gui?
+
 acceptedsymbols = "!@#$%^&*()-_=+|;:'\",.<>?"
 
 password = input("input your password: ")
