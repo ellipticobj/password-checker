@@ -1,10 +1,6 @@
 from secretpassword import getpassword
 from utils import *
 
-# TODO: make a password generator
-# TODO: make a way for the user to type in the password without it being displaye?
-# TODO: gui?
-
 while True:
     choice = input("1. Check your password strength\n2. Generate a secure password\nInput your choice[1/2]: ")
     while choice not in ['1','2']:
