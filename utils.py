@@ -26,7 +26,7 @@ def checklength(password):
         return False
     return True
 
-def checksymbols(password, symbols):
+def checksymbols(password, symbols=symbols):
     return sum(char in symbols for char in password) >= securesymb
 
 def checkupper(password):
