@@ -45,6 +45,15 @@ def genpassword():
     generatedpassword = generatepass()
     genpasslabel.config(text=f"{generatedpassword}")
 
+def resetlabels():
+    lengthchecklabel.config(text="your password's length is okay!", bootstyle="success")
+    symbolchecklabel.config(text="your password has symbols", bootstyle="success")
+    upperchecklabel.config(text="your password has uppercase characters", bootstyle="success")
+    lowerchecklabel.config(text="your password has lowercase characters", bootstyle="success")
+    numberchecklabel.config(text="your password has numbers", bootstyle="success")
+    rockyouchecklabel.config(text="your password is not in the list of common passwords", bootstyle="success")
+
+
 frame1 = ttk.Frame(root)
 frames["main page"] = frame1
 
@@ -81,7 +90,7 @@ numberchecklabel.pack(pady=5)
 rockyouchecklabel = ttk.Label(frame2, text="your password is not in the list of common passwords", bootstyle="success")
 rockyouchecklabel.pack(pady=5)
 
-checkbackbutton = ttk.Button(frame2, text="back", command=lambda: (showpage("main page")), bootstyle="outline")
+checkbackbutton = ttk.Button(frame2, text="back", command=lambda: (resetlabels(), showpage("main page")), bootstyle="outline")
 checkbackbutton.pack(pady=5)
 
 
