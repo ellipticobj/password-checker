@@ -39,7 +39,7 @@ def checknumbers(password):
     return sum(char.isdigit() for char in password) >= securenum
 
 def checkrockyou(password):
-    with open('rockyou.txt', 'r') as file:
+    with open('assets/rockyou.txt', 'r') as file:
         for line in file:
             if password == line.strip():
                 return False

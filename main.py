@@ -8,6 +8,7 @@ while True:
     
     if choice == "1":
         password = getpassword("input your password: ", True)
+        print()
         print("checking password...")
 
         print("    checking password length...", end='')
